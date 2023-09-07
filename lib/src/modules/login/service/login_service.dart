@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:my_money/src/modules/login/model/login_model.dart';
 import 'package:my_money/src/modules/login/repositories/login_repository.dart';
@@ -36,7 +38,7 @@ class LoginService {
       String userId = userData['id'];
 
       AppSecureStorage.addItem(Appkeys.auth_token, token);
-      AppSecureStorage.addItem(Appkeys.user, userData.toString());
+      AppSecureStorage.addItem(Appkeys.user, jsonEncode(userData));
       AppSecureStorage.addItem(Appkeys.user_id, userId);
     }
   }

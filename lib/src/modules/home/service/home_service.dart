@@ -39,6 +39,11 @@ class HomeService {
       PersonalRegisterModel personalRegister =
           PersonalRegisterModel.fromJson(response.data!);
 
+      AppSecureStorage.addItem(
+        Appkeys.goal_value,
+        personalRegister.limitValue.toString(),
+      );
+
       return personalRegister.limitValue;
     } catch (ex) {
       debugPrint(ex.toString());
