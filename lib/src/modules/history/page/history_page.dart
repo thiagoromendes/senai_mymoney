@@ -5,11 +5,8 @@ import 'package:my_money/src/shared/components/expense_list.dart';
 import 'package:my_money/src/shared/model/expense_model.dart';
 
 class HistoryPage extends StatelessWidget {
-  final List<ExpenseModel>? expenses;
-
   const HistoryPage({
     super.key,
-    this.expenses,
   });
 
   @override
