@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:my_money/src/modules/login/service/login_service.dart';
-import 'package:my_money/src/router/app_router.dart';
 import 'package:my_money/src/shared/components/app_snackbar.dart';
 import 'package:my_money/src/shared/helpers/validator.dart';
-import 'package:my_money/src/shared/storage/app_keys.dart';
-import 'package:my_money/src/shared/storage/app_secure_storage.dart';
 part 'login_controller.g.dart';
 
 class LoginController = _LoginController with _$LoginController;
@@ -18,6 +15,9 @@ abstract class _LoginController with Store {
 
   @observable
   bool isSuccess = false;
+
+  @observable
+  bool isFirstAcess = false;
 
   late String email;
   late String password;
@@ -62,6 +62,11 @@ abstract class _LoginController with Store {
     result.containsKey('success')
         ? setSucess()
         : getException(result['exception']);
+  }
+
+  @action
+  Future<void> verifyFirstAcess() async {
+    isFirstAcess = await service.verifyFirstAcess();
   }
 
   @action
