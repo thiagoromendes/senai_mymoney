@@ -24,6 +24,10 @@ class App extends StatelessWidget {
       home: const InitialPage(),
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData.dark(),
+      supportedLocales: const [
+        Locale('en', 'US'),
+        Locale('pt', 'BR'),
+      ],
       routes: {
         AppRouter.login: (context) => const LoginPage(),
         AppRouter.register: (context) => const RegisterPage(),

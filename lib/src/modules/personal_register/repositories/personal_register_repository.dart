@@ -6,7 +6,7 @@ import 'package:my_money/src/shared/model/user_update_model.dart';
 class PersonalRegisterRepository {
   Future<Response<Map<String, dynamic>>> sendData(
       PersonalRegisterModel personalRegisterData) async {
-    String url = "http://192.168.5.159:3099/goal/create";
+    String url = "http://192.168.31.96:3099/goal/create";
 
     Dio clientHTTP = await AppDio.getConnection(isAuth: true);
 
@@ -15,7 +15,7 @@ class PersonalRegisterRepository {
 
   Future<Response<Map<String, dynamic>>> updateDataUser(
       String userId, UserUpdateModel userUpdate) async {
-    String url = "http://192.168.5.159:3099/user/update/$userId";
+    String url = "http://192.168.31.96:3099/user/update/$userId";
 
     Dio clientHTTP = await AppDio.getConnection(isAuth: true);
 

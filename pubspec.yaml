@@ -20,6 +20,7 @@ dependencies:
   flutter_secure_storage: 8.0.0
   gauge_indicator: ^0.4.3
   intl: ^0.18.1
+  flutter_rounded_date_picker: ^3.0.4
   
 
 dev_dependencies:
